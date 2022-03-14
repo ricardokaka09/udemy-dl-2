@@ -142,7 +142,7 @@ class Udemy:
         )
         url = COURSE_SEARCH.format(portal_name=portal_name, course_name=course_name)
         try:
-            webpage = self._session._get(url, headers = {'Authentication': "Bearer {access_token}".format(access_token=self._cookies.get("access_token"))}).json()
+            webpage = self._session._get(url).json()
         except conn_error as error:
             logger.error(msg=f"Udemy Says: Connection error, {error}")
             time.sleep(0.8)
