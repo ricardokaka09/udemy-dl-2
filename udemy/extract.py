@@ -148,7 +148,7 @@ class Udemy:
             time.sleep(0.8)
             sys.exit(0)
         except (ValueError, Exception) as error:
-            logger.error(msg=f"Udemy Says: {error} on {url}")
+            logger.error(msg=f"Udemy Says: {error} on {url} session: ${self._session._headers}")
             time.sleep(0.8)
             sys.exit(0)
         else:
